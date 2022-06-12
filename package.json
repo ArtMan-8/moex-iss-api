@@ -16,5 +16,6 @@
 		"commitizen": {
 			"path": "./node_modules/cz-emoji-conventional"
 		}
-	}
+	},
+	"version": null
 }
