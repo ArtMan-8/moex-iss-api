@@ -1,0 +1,20 @@
+{
+	"scripts": {
+		"commit": "git-cz",
+		"prepublish": "npm run build",
+		"release": "standard-version",
+		"release:major": "standard-version --release-as major && npm run build",
+		"release:minor": "standard-version --release-as minor && npm run build",
+		"release:patch": "standard-version --release-as patch && npm run build"
+	},
+	"devDependencies": {
+		"commitizen": "^4.2.4",
+		"cz-emoji-conventional": "^1.0.1",
+		"standard-version": "^9.5.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-emoji-conventional"
+		}
+	}
+}

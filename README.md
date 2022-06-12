@@ -1,2 +1,3 @@
-# moex-iss-api
-Moex-iss api client, on JS
+# MOEX ISS API CLient for JS
+
+Moex-iss api client, for JS
