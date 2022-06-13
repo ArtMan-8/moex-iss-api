@@ -1,0 +1,12 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Node: Nodemon",
+			"type": "node",
+			"request": "attach",
+			"processId": "${command:PickProcess}",
+			"restart": true
+		}
+	]
+}
