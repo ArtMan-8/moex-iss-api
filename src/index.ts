@@ -1,1 +1,1 @@
-export { default as MoexClient } from "./api";
+export { default as MoexClient } from "./client";
