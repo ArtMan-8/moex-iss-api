@@ -4,13 +4,10 @@ import axios, {
 	AxiosRequestConfig,
 	AxiosResponse,
 } from "axios";
-import {
-	EResponseDataFormat,
-	EResponseDataLanguage,
-	IAxiosConfig,
-} from "./interfaces";
 
-export const API_BASE_URL = "https://iss.moex.com/iss";
+import { EResponseDataFormat, EResponseDataLanguage, IAxiosConfig } from ".";
+
+const API_BASE_URL = "https://iss.moex.com/iss";
 
 export const createAxiosInstance = (config?: IAxiosConfig): AxiosInstance => {
 	const dataLanguage = config?.dataLanguage || EResponseDataLanguage.ru;

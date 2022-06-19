@@ -14,7 +14,3 @@ export interface IAxiosConfig {
 	dataLanguage?: keyof typeof EResponseDataLanguage;
 	dataFormat?: keyof typeof EResponseDataFormat;
 }
-
-export interface IMoexClientOptions extends IAxiosConfig {
-	[key: string]: any;
-}

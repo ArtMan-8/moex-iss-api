@@ -35,6 +35,9 @@
 			"path": "./node_modules/cz-emoji-conventional"
 		}
 	},
+	"dependencies": {
+		"axios": "^0.27.2"
+	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
 		"@typescript-eslint/parser": "^5.27.1",
@@ -58,8 +61,5 @@
 	"bugs": {
 		"url": "https://github.com/ArtMan-8/moex-iss-api/issues"
 	},
-	"homepage": "https://github.com/ArtMan-8/moex-iss-api#readme",
-	"dependencies": {
-		"axios": "^0.27.2"
-	}
+	"homepage": "https://github.com/ArtMan-8/moex-iss-api#readme"
 }
