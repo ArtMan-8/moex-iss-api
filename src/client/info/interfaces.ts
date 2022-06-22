@@ -1,34 +1,66 @@
 import { AxiosResponse } from "axios";
 
-export interface IGetTurnoversArgs {
+import {
+	IEventsDetailResponse,
+	IEventsResponse,
+	IHandbooksResponse,
+	INewsDetailResponse,
+	INewsResponse,
+	ITurnoversColumnsResponse,
+	ITurnoversResponse,
+} from "./responseTypes";
+
+export type TGetHandbooks = () => Promise<AxiosResponse<IHandbooksResponse>>;
+
+export type TGetEvents = (
+	start?: number,
+) => Promise<AxiosResponse<IEventsResponse>>;
+
+export type TGetEventsDetail = (
+	eventId: number,
+) => Promise<AxiosResponse<IEventsDetailResponse>>;
+
+export type TGetNews = (
+	start?: number,
+) => Promise<AxiosResponse<INewsResponse>>;
+
+export type TGetNewsDetail = (
+	newsId: number,
+) => Promise<AxiosResponse<INewsDetailResponse>>;
+
+export type TGetTurnovers = (args?: {
 	/** обороты за вечернюю сессию */
 	isToNight?: 0 | 1;
 	/** обороты за конкретную дату, YYYY-MM-DD */
 	data?: string;
-}
+}) => Promise<AxiosResponse<ITurnoversResponse>>;
+
+export type TGetTurnoversColumns = () => Promise<
+	AxiosResponse<ITurnoversColumnsResponse>
+>;
 
 export interface IInfoApi {
 	/** Получить глобальные справочники ISS */
-	getHandbooks: () => Promise<AxiosResponse>;
+	getHandbooks: TGetHandbooks;
 
 	/**
 	 * Получить список мероприятий биржи
 	 * @param {number} start смещение начала
 	 */
-	getEvents: (start?: number) => Promise<AxiosResponse>;
+	getEvents: TGetEvents;
 
 	/** Получить подробности мероприятия биржи */
-	getEventsDetail: (eventId: number) => Promise<AxiosResponse>;
+	getEventsDetail: TGetEventsDetail;
 
 	/** Получить список новостей биржи */
-	getNews: (start?: number) => Promise<AxiosResponse>;
+	getNews: TGetNews;
 
 	/** Получить подробности новости биржи */
-	getNewsDetail: (newsId: number) => Promise<AxiosResponse>;
+	getNewsDetail: TGetNewsDetail;
 
 	/** Получить сводные обороты по рынкам */
-	getTurnovers: (args?: IGetTurnoversArgs) => Promise<AxiosResponse>;
+	getTurnovers: TGetTurnovers;
 
 	/** Получить описание полей для запросов оборотов по рынку/торговой системе */
-	getTurnoversColumns: () => Promise<AxiosResponse>;
+	getTurnoversColumns: TGetTurnoversColumns;
 }

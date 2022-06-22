@@ -1,4 +1,5 @@
 import { IAxiosConfig } from "src/api";
+
 import InfoApi from "./info";
 
 export interface IMoexClientOptions extends IAxiosConfig {
