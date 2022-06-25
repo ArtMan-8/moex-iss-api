@@ -15,10 +15,11 @@
 		"dist"
 	],
 	"scripts": {
-		"commit": "git-cz",
+		"commit": "cz",
 		"dev": "nodemon src/index.ts --inspect",
 		"build": "rm -rf dist/* && tsc",
 		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint:staged": "lint-staged",
 		"release:major": "standard-version --release-as major && npm run build",
 		"release:minor": "standard-version --release-as minor && npm run build",
 		"release:patch": "standard-version --release-as patch && npm run build",
@@ -32,17 +33,19 @@
 	},
 	"config": {
 		"commitizen": {
-			"path": "./node_modules/cz-emoji-conventional"
+			"path": "./node_modules/cz-conventional-changelog"
 		}
 	},
 	"dependencies": {
 		"axios": "^0.27.2"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^17.0.3",
+		"@commitlint/config-conventional": "^17.0.3",
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
 		"@typescript-eslint/parser": "^5.27.1",
 		"commitizen": "^4.2.4",
-		"cz-emoji-conventional": "^1.0.1",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^8.17.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-import-resolver-typescript": "^2.7.1",

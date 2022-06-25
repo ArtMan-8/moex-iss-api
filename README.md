@@ -1,6 +1,6 @@
 # MOEX ISS API CLient for JS
 
-<img src="https://img.shields.io/badge/</>-TypeScript-3178c6?style=flat&labelColor=262626">
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?labelColor=262626)](http://commitizen.github.io/cz-cli/) [![TypeScript](https://img.shields.io/badge/</>-TypeScript-3178c6?labelColor=262626)](https://www.typescriptlang.org/)
 
 Клиент для запросов к MOEX ISS.<br />
 
