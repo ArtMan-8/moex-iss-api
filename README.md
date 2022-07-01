@@ -18,12 +18,12 @@ npm install --save moex-iss-api-client
 ### Пример использования
 
 ```
-import { MoexClient } from "moex-iss-api-client";
+import { createMoexCLient } from "moex-iss-api-client";
 // или
-const MoexClient = require("moex-iss-api-client");
+const createMoexCLient = require("moex-iss-api-client");
 
 
-const moexClient = new MoexClient();
+const moexClient = createMoexCLient();
 
 const response = await moexClient.info.getHandbooks();
 ```

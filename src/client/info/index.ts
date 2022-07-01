@@ -18,31 +18,31 @@ export default class InfoApi implements IInfoApi {
 		this.axios = axios;
 	}
 
-	getHandbooks: TGetHandbooks = async () => {
+	public getHandbooks: TGetHandbooks = async () => {
 		return await this.axios.get(`/index`);
 	};
 
-	getEvents: TGetEvents = async (start?: number) => {
+	public getEvents: TGetEvents = async (start?: number) => {
 		return await this.axios.get("/events", {
 			params: { start },
 		});
 	};
 
-	getEventsDetail: TGetEventsDetail = async (eventId: number) => {
+	public getEventsDetail: TGetEventsDetail = async (eventId: number) => {
 		return await this.axios.get(`/events/${eventId}`);
 	};
 
-	getNews: TGetNews = async (start?: number) => {
+	public getNews: TGetNews = async (start?: number) => {
 		return await this.axios.get("/sitenews", {
 			params: { start },
 		});
 	};
 
-	getNewsDetail: TGetNewsDetail = async (newsId: number) => {
+	public getNewsDetail: TGetNewsDetail = async (newsId: number) => {
 		return await this.axios.get(`/sitenews/${newsId}`);
 	};
 
-	getTurnovers: TGetTurnovers = async (args) => {
+	public getTurnovers: TGetTurnovers = async (args) => {
 		const params = {
 			is_tonight_session: args?.isToNight || 0,
 			data: args?.data || "today",
@@ -53,7 +53,7 @@ export default class InfoApi implements IInfoApi {
 		});
 	};
 
-	getTurnoversColumns: TGetTurnoversColumns = async () => {
+	public getTurnoversColumns: TGetTurnoversColumns = async () => {
 		return await this.axios.get(`/turnovers/columns`);
 	};
 }
