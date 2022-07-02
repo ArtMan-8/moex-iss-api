@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
 
+import { IInfoApi } from "./interfaces";
 import {
-	IInfoApi,
 	TGetEvents,
 	TGetEventsDetail,
 	TGetHandbooks,
@@ -9,7 +9,7 @@ import {
 	TGetNewsDetail,
 	TGetTurnovers,
 	TGetTurnoversColumns,
-} from "./interfaces";
+} from "./requestTypes";
 
 export default class InfoApi implements IInfoApi {
 	private api: AxiosInstance;
@@ -24,7 +24,7 @@ export default class InfoApi implements IInfoApi {
 
 	public getEvents: TGetEvents = async (start?: number) => {
 		return await this.api.get("/events", {
-			params: { start },
+			params: { start: start || 0 },
 		});
 	};
 
@@ -34,7 +34,7 @@ export default class InfoApi implements IInfoApi {
 
 	public getNews: TGetNews = async (start?: number) => {
 		return await this.api.get("/sitenews", {
-			params: { start },
+			params: { start: start || 0 },
 		});
 	};
 

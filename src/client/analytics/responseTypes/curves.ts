@@ -15,7 +15,7 @@ export interface ICurvesResponse {
 		metadata: {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
-		columns: [keyof typeof IColumns];
+		columns: [keyof typeof IColumns] | ["ERROR_MESSAGE"];
 		data: (string | number)[][];
 	};
 }
