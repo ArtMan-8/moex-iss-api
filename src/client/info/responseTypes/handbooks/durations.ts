@@ -1,4 +1,4 @@
-import { IMetaDataItem } from "src/types/interfaces";
+import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
 	Interval = "interval",
@@ -13,5 +13,5 @@ export interface IHandbooksDurationsResponse {
 		[key in keyof typeof IColumns]: IMetaDataItem;
 	};
 	columns: [keyof typeof IColumns];
-	data: (string | number | null)[][];
+	data: TData;
 }

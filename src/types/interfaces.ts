@@ -3,3 +3,5 @@ export interface IMetaDataItem {
 	bytes?: number;
 	max_size?: number;
 }
+
+export type TData = (string | number | null)[][];

@@ -1,4 +1,4 @@
-import { IMetaDataItem } from "src/types/interfaces";
+import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
 	Name = "NAME",
@@ -16,13 +16,13 @@ export interface ITurnoversResponse {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
 		columns: [keyof typeof IColumns];
-		data: (string | number | null)[][];
+		data: TData;
 	};
 	turnoversprevdate: {
 		metadata: {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
 		columns: [keyof typeof IColumns];
-		data: (string | number | null)[][];
+		data: TData;
 	};
 }

@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { INetflow2Response } from "../responseTypes";
 
@@ -9,4 +9,4 @@ export interface IGetNetflow2Args {
 
 export type IGetNetflow2 = (
 	args?: IGetNetflow2Args,
-) => Promise<AxiosResponse<INetflow2Response>>;
+) => Promise<TAxiosResponse<INetflow2Response>>;

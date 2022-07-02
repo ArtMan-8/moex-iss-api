@@ -1,4 +1,4 @@
-import { IMetaDataItem } from "src/types/interfaces";
+import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
 	Date = "date",
@@ -19,6 +19,6 @@ export interface INetflow2Response {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
 		columns: [keyof typeof IColumns];
-		data: (string | number)[][];
+		data: TData;
 	};
 }

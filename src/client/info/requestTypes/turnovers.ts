@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { ITurnoversResponse } from "../responseTypes";
 
@@ -11,4 +11,4 @@ export interface IGetTurnoversArgs {
 
 export type TGetTurnovers = (
 	args?: IGetTurnoversArgs,
-) => Promise<AxiosResponse<ITurnoversResponse>>;
+) => Promise<TAxiosResponse<ITurnoversResponse>>;

@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { ITurnoversColumnsResponse } from "../responseTypes";
 

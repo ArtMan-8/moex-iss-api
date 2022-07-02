@@ -1,4 +1,4 @@
-import { IMetaDataItem } from "src/types/interfaces";
+import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
 	TradeDate = "tradedate",
@@ -16,7 +16,7 @@ export interface ICurvesResponse {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
 		columns: [keyof typeof IColumns] | ["ERROR_MESSAGE"];
-		data: (string | number)[][];
+		data: TData;
 	};
 }
 
