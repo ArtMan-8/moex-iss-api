@@ -1,2 +1,3 @@
-export { IFutoiResponse } from "./futoi";
-export { INetflow2Response } from "./netflow2";
+export * from "./futoi";
+export * from "./netflow2";
+export * from "./curves";
