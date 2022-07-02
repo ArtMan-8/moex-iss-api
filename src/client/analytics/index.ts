@@ -4,6 +4,10 @@ import { IAnalyticsApi } from "./interfaces";
 import {
 	IGetFutoiArgs,
 	IGetFutoiSecurityArgs,
+	IGetNetflow2,
+	IGetNetflow2Args,
+	IGetNetflow2Security,
+	IGetNetflow2SecurityArgs,
 	TGetFutoi,
 	TGetFutoiSecurity,
 } from "./requestTypes";
@@ -36,6 +40,33 @@ export default class AnalyticsApi implements IAnalyticsApi {
 
 		return await this.axios.get(
 			`/analyticalproducts/futoi/securities/${security}`,
+			{
+				params,
+			},
+		);
+	};
+
+	public getNetflow2: IGetNetflow2 = async (args) => {
+		const params: IGetNetflow2Args = {
+			date: args?.date || "today",
+		};
+
+		return await this.axios.get("/analyticalproducts/netflow2/securities", {
+			params,
+		});
+	};
+
+	public getNetflow2Security: IGetNetflow2Security = async (
+		security,
+		args,
+	) => {
+		const params: IGetNetflow2SecurityArgs = {
+			from: args?.from || "",
+			till: args?.till || "",
+		};
+
+		return await this.axios.get(
+			`/analyticalproducts/netflow2/securities/${security}`,
 			{
 				params,
 			},
