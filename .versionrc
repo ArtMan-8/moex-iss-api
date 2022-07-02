@@ -53,7 +53,7 @@
 		{
 			"type": "test",
 			"section": "Tests",
-			"hidden": true
+			"hidden": false
 		}
 	]
 }

@@ -13,7 +13,7 @@ export interface IGetFutoiSecurityArgs {
 	 */
 	till?: string;
 	/** Последний срез за день, "1" - включить */
-	latest?: "0" | "1";
+	latest?: 0 | 1;
 }
 
 export type TGetFutoiSecurity = (

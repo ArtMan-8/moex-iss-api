@@ -26,7 +26,7 @@ export default class AnalyticsApi implements IAnalyticsApi {
 	public getFutoi: TGetFutoi = async (args) => {
 		const params: IGetFutoiArgs = {
 			date: args?.date || "today",
-			latest: args?.latest || "0",
+			latest: args?.latest || 0,
 			table_type: args?.table_type || "full",
 		};
 
@@ -39,7 +39,7 @@ export default class AnalyticsApi implements IAnalyticsApi {
 		const params: IGetFutoiSecurityArgs = {
 			from: args?.from,
 			till: args?.till,
-			latest: args?.latest || "0",
+			latest: args?.latest || 0,
 		};
 
 		return await this.api.get(
