@@ -1,6 +1,8 @@
 import { AxiosResponse } from "axios";
 
-export interface IGetFutoiSecurityArgs {
+import { ICurvesResponse, TCurvesSecurity } from "../responseTypes";
+
+export interface IGetCurvesSecurityArgs {
 	/**
 	 * Дата в формате YYYY-MM-DD начиная с которой отдаются данные.
 	 * Обратите внимание, что для данного запроса нет постраничной навигации. вам необходимо будет изменять параметр &from на дату следующую после полученных вами данных.
@@ -12,11 +14,9 @@ export interface IGetFutoiSecurityArgs {
 	 * Данный параметр должен быть больше или равен параметру from.
 	 */
 	till?: string;
-	/** Последний срез за день, "1" - включить */
-	latest?: "0" | "1";
 }
 
-export type TGetFutoiSecurity = (
-	security: string,
-	args?: IGetFutoiSecurityArgs,
-) => Promise<AxiosResponse<any>>;
+export type TGetCurvesSecurity = (
+	security: TCurvesSecurity | string,
+	args?: IGetCurvesSecurityArgs,
+) => Promise<AxiosResponse<ICurvesResponse>>;
