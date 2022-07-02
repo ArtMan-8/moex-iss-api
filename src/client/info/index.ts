@@ -45,7 +45,7 @@ export default class InfoApi implements IInfoApi {
 	public getTurnovers: TGetTurnovers = async (args) => {
 		const params = {
 			is_tonight_session: args?.isToNight || 0,
-			data: args?.data || "today",
+			date: args?.date || "today",
 		};
 
 		return await this.axios.get(`/turnovers`, {

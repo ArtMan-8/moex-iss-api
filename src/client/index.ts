@@ -1,16 +1,19 @@
 import { AxiosInstance } from "axios";
 
 import { createAxiosInstance } from "../api";
+import AnalyticsApi from "./analytics";
 import InfoApi from "./info";
 import { IMoexClient, IMoexClientConstructor, IMoexConfig } from "./interfaces";
 
 class MoexClient implements IMoexClient {
 	private axios: AxiosInstance;
 	public info: InfoApi;
+	public analytics: AnalyticsApi;
 
 	constructor(config?: IMoexConfig) {
 		this.axios = createAxiosInstance(config);
 		this.info = new InfoApi(this.axios);
+		this.analytics = new AnalyticsApi(this.axios);
 	}
 
 	public request = async (url: string) => {
@@ -34,6 +37,5 @@ const createMoexCLient =
 /**
  * Базовые запросы к MOEX ISS API.
  * {@link http://iss.moex.com/iss/reference/ MOEX ISS}
- 
  */
 export default createMoexCLient(MoexClient);
