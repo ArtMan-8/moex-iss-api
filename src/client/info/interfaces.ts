@@ -31,8 +31,8 @@ export type TGetNewsDetail = (
 export type TGetTurnovers = (args?: {
 	/** обороты за вечернюю сессию */
 	isToNight?: 0 | 1;
-	/** обороты за конкретную дату, YYYY-MM-DD */
-	data?: string;
+	/** обороты за конкретную дату, в формате YYYY-MM-DD, или "today" */
+	date?: "today" | string;
 }) => Promise<AxiosResponse<ITurnoversResponse>>;
 
 export type TGetTurnoversColumns = () => Promise<

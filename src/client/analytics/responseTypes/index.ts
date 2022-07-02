@@ -1,0 +1,1 @@
+export { IFutoiResponse } from "./futoi";

@@ -1,5 +1,6 @@
 import { AxiosResponse } from "axios";
 
+import AnalyticsApi from "./analytics";
 import InfoApi from "./info";
 
 export enum EResponseDataFormat {
@@ -30,6 +31,8 @@ export interface IMoexClient {
 	/** Произвольный запрос, согласно справочника
 	 * {@link http://iss.moex.com/iss/reference/ MOEX ISS}
 	 */
+	/** Аналитические запросы: futoi, netflow2 */
+	analytics: AnalyticsApi;
 	request: TResponse;
 }
 
