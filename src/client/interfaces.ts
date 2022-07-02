@@ -28,11 +28,11 @@ export type TResponse = (url: string) => Promise<TAxiosResponse>;
 export interface IMoexClient {
 	/** Получение различной информации */
 	info: InfoApi;
+	/** Аналитические запросы: futoi, netflow2 */
+	analytics: AnalyticsApi;
 	/** Произвольный запрос, согласно справочника
 	 * {@link http://iss.moex.com/iss/reference/ MOEX ISS}
 	 */
-	/** Аналитические запросы: futoi, netflow2 */
-	analytics: AnalyticsApi;
 	request: TResponse;
 }
 
