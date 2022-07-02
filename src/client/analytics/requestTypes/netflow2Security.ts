@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 export interface IGetNetflow2SecurityArgs {
 	/**
@@ -17,4 +17,4 @@ export interface IGetNetflow2SecurityArgs {
 export type IGetNetflow2Security = (
 	security: string,
 	args?: IGetNetflow2SecurityArgs,
-) => Promise<AxiosResponse<any>>;
+) => Promise<TAxiosResponse<any>>;

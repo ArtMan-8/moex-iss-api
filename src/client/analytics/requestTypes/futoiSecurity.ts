@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 export interface IGetFutoiSecurityArgs {
 	/**
@@ -19,4 +19,4 @@ export interface IGetFutoiSecurityArgs {
 export type TGetFutoiSecurity = (
 	security: string,
 	args?: IGetFutoiSecurityArgs,
-) => Promise<AxiosResponse<any>>;
+) => Promise<TAxiosResponse<any>>;

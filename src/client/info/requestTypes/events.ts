@@ -1,8 +1,8 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { IEventsResponse } from "../responseTypes";
 
 export type TGetEvents = (
 	/** смещение начала */
 	start?: number,
-) => Promise<AxiosResponse<IEventsResponse>>;
+) => Promise<TAxiosResponse<IEventsResponse>>;

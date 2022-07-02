@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { ICurvesResponse, TCurvesSecurity } from "../responseTypes";
 
@@ -19,4 +19,4 @@ export interface IGetCurvesSecurityArgs {
 export type TGetCurvesSecurity = (
 	security: TCurvesSecurity | string,
 	args?: IGetCurvesSecurityArgs,
-) => Promise<AxiosResponse<ICurvesResponse>>;
+) => Promise<TAxiosResponse<ICurvesResponse>>;

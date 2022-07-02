@@ -1,17 +1,13 @@
-import axios, {
-	AxiosError,
-	AxiosInstance,
-	AxiosRequestConfig,
-	AxiosResponse,
-} from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
 
 import {
 	EResponseDataFormat,
 	EResponseDataLanguage,
 	IMoexConfig,
 } from "../client/interfaces";
-
-const API_BASE_URL = "https://iss.moex.com/iss";
+import { API_BASE_URL } from "./constants";
+import { checkError } from "./helpers";
+import { TAxiosResponse } from "./interfaces";
 
 export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 	const dataLanguage = config?.dataLanguage || EResponseDataLanguage.ru;
@@ -32,7 +28,11 @@ export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 
 	api.interceptors.request.use(setDataFormat);
 
-	const onSuccess = (response: AxiosResponse) => response;
+	const onSuccess = (response: TAxiosResponse) => {
+		const error = checkError(response.data);
+		response.issError = error;
+		return response;
+	};
 
 	const onError = (err: AxiosError) => {
 		console.error(err);

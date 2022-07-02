@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import { IFutoiResponse } from "../responseTypes";
 
@@ -12,4 +12,4 @@ export interface IGetFutoiArgs {
 
 export type TGetFutoi = (
 	args?: IGetFutoiArgs,
-) => Promise<AxiosResponse<IFutoiResponse>>;
+) => Promise<TAxiosResponse<IFutoiResponse>>;

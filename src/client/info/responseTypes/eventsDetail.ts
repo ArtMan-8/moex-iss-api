@@ -1,4 +1,4 @@
-import { IMetaDataItem } from "src/types/interfaces";
+import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
 	Id = "id",
@@ -16,6 +16,6 @@ export interface IEventsDetailResponse {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
 		columns: [keyof typeof IColumns];
-		data: (string | number | null)[][];
+		data: TData;
 	};
 }

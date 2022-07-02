@@ -1,4 +1,4 @@
-import { AxiosResponse } from "axios";
+import { TAxiosResponse } from "src/api/interfaces";
 
 import AnalyticsApi from "./analytics";
 import InfoApi from "./info";
@@ -22,7 +22,7 @@ export interface IMoexConfig {
 	dataFormat?: keyof typeof EResponseDataFormat;
 }
 
-export type TResponse = (url: string) => Promise<AxiosResponse>;
+export type TResponse = (url: string) => Promise<TAxiosResponse>;
 
 /** Базовые запросы к MOEX ISS API */
 export interface IMoexClient {
