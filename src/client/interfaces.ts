@@ -2,6 +2,7 @@ import { TAxiosResponse } from "src/api/interfaces";
 
 import AnalyticsApi from "./analytics";
 import InfoApi from "./info";
+import SecurityApi from "./security";
 
 export enum EResponseDataFormat {
 	json = "json",
@@ -26,10 +27,12 @@ export type TResponse = (url: string) => Promise<TAxiosResponse>;
 
 /** Базовые запросы к MOEX ISS API */
 export interface IMoexClient {
-	/** Получение различной информации */
+	/** Получить новости/мероприятия и прочую информации */
 	info: InfoApi;
 	/** Аналитические запросы: futoi, netflow2 */
 	analytics: AnalyticsApi;
+	/** Получить информацию по торгуемым инструментам */
+	security: SecurityApi;
 	/** Произвольный запрос, согласно справочника
 	 * {@link http://iss.moex.com/iss/reference/ MOEX ISS}
 	 */

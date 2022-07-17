@@ -4,16 +4,19 @@ import { createAxiosInstance } from "../api";
 import AnalyticsApi from "./analytics";
 import InfoApi from "./info";
 import { IMoexClient, IMoexClientConstructor, IMoexConfig } from "./interfaces";
+import SecurityApi from "./security";
 
 class MoexClient implements IMoexClient {
 	private api: AxiosInstance;
 	public info: InfoApi;
 	public analytics: AnalyticsApi;
+	public security: SecurityApi;
 
 	constructor(config?: IMoexConfig) {
 		this.api = createAxiosInstance(config);
 		this.info = new InfoApi(this.api);
 		this.analytics = new AnalyticsApi(this.api);
+		this.security = new SecurityApi(this.api);
 	}
 
 	public request = async (url: string) => {
