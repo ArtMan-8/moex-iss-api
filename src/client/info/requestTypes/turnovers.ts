@@ -4,7 +4,7 @@ import { ITurnoversResponse } from "../responseTypes";
 
 export interface IGetTurnoversArgs {
 	/** обороты за вечернюю сессию */
-	isToNight?: 0 | 1;
+	is_tonight_session?: 0 | 1;
 	/** обороты за конкретную дату, в формате YYYY-MM-DD, или "today" */
 	date?: "today" | string;
 }
