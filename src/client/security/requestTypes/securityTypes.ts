@@ -101,5 +101,5 @@ export enum ESecurityTypes {
 
 export type TGetSecurityTypes = (
 	/** Группа ценных бумаг */
-	security?: ESecurityTypes,
+	securitytype?: ESecurityTypes,
 ) => Promise<TAxiosResponse<ISecurityTypesResponse>>;
