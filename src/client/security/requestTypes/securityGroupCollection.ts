@@ -5,4 +5,5 @@ import { ESecurityGroups } from "./securityGroups";
 
 export type TGetSecurityGroupCollection = (
 	securitygroup: ESecurityGroups,
+	collection?: string,
 ) => Promise<TAxiosResponse<ISecurityGroupCollectionResponse>>;
