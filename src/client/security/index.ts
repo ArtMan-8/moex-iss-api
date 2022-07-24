@@ -2,6 +2,8 @@ import { AxiosInstance } from "axios";
 
 import { ISecurityApi } from "./interfaces";
 import {
+	IGetSecuritiesInfoParams,
+	TGetSecuritiesInfo,
 	TGetSecurityGroupCollection,
 	TGetSecurityGroups,
 	TGetSecurityTypes,
@@ -33,8 +35,11 @@ export default class SecurityApi implements ISecurityApi {
 
 	public getSecurityGroupCollection: TGetSecurityGroupCollection = async (
 		securitygroup,
+		collection,
 	) => {
-		const path = `/securitygroups/${securitygroup}/collections`;
+		const path = collection
+			? `/securitygroups/${securitygroup}/collections/${collection}`
+			: `/securitygroups/${securitygroup}/collections`;
 
 		return await this.api.get(path);
 	};
@@ -45,5 +50,23 @@ export default class SecurityApi implements ISecurityApi {
 			: "/securitytypes";
 
 		return await this.api.get(path);
+	};
+
+	public getSecuritiesInfo: TGetSecuritiesInfo = async ({
+		securitygroup,
+		collection,
+		args,
+	}) => {
+		const path = `/securitygroups/${securitygroup}/collections/${collection}/securities`;
+
+		const params: IGetSecuritiesInfoParams = {
+			sort_order: args?.sort_order || "secid",
+			sort_order_desc: args?.sort_order_desc || "asc",
+			start: args?.start || 0,
+		};
+
+		return await this.api.get(path, {
+			params,
+		});
 	};
 }

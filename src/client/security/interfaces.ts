@@ -1,4 +1,5 @@
 import {
+	TGetSecuritiesInfo,
 	TGetSecurityGroupCollection,
 	TGetSecurityGroups,
 	TGetSecurityTypes,
@@ -7,8 +8,13 @@ import {
 export interface ISecurityApi {
 	/** Получить список групп (группу) ценных бумаг*/
 	getSecurityGroups: TGetSecurityGroups;
+
 	/** Получить коллекции ценных бумаг входящие в группу */
 	getSecurityGroupCollection: TGetSecurityGroupCollection;
+
 	/** Получить список типов (тип) ценных бумаг*/
 	getSecurityTypes: TGetSecurityTypes;
+
+	/** Получить список описания инструментов */
+	getSecuritiesInfo: TGetSecuritiesInfo;
 }

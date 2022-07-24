@@ -43,7 +43,10 @@ export enum ESecurityGroups {
 }
 
 export interface IGetSecurityGroupsArgs {
-	/** Скрыть неактивные группы */
+	/**
+	 * Скрыть неактивные группы
+	 * По умолчанию - 0
+	 * */
 	hide_inactive?: 0 | 1;
 	/** Рынок торгов */
 	trade_engine?: EEngines;

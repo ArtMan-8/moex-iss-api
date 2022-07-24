@@ -3,7 +3,10 @@ import { TAxiosResponse } from "src/api/interfaces";
 import { INetflow2Response } from "../responseTypes";
 
 export interface IGetNetflow2Args {
-	/** Дата в формате YYYY-MM-DD, или "today" */
+	/**
+	 * Дата в формате YYYY-MM-DD, или "today"
+	 * По умолчанию - today
+	 * */
 	date?: "today" | string;
 }
 

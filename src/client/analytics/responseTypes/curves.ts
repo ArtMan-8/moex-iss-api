@@ -1,3 +1,4 @@
+import { ERROR_MESSAGE } from "src/api/constants";
 import { IMetaDataItem, TData } from "src/types/interfaces";
 
 enum IColumns {
@@ -15,7 +16,7 @@ export interface ICurvesResponse {
 		metadata: {
 			[key in keyof typeof IColumns]: IMetaDataItem;
 		};
-		columns: [keyof typeof IColumns] | ["ERROR_MESSAGE"];
+		columns: [keyof typeof IColumns] | [typeof ERROR_MESSAGE];
 		data: TData;
 	};
 }
