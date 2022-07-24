@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
 
 import { ISecurityApi } from "./interfaces";
-import { TGetSecurityGroups } from "./requestTypes";
+import { TGetSecurityGroups, TGetSecurityTypes } from "./requestTypes";
 
 export default class SecurityApi implements ISecurityApi {
 	private api: AxiosInstance;
@@ -25,5 +25,11 @@ export default class SecurityApi implements ISecurityApi {
 		return await this.api.get(path, {
 			params,
 		});
+	};
+
+	public getSecurityTypes: TGetSecurityTypes = async (security) => {
+		const path = security ? `/securitytypes/${security}` : "/securitytypes";
+
+		return await this.api.get(path);
 	};
 }

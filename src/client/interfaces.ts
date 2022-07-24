@@ -18,9 +18,9 @@ export enum EResponseDataLanguage {
 
 export interface IMoexConfig {
 	/** Язык ответа */
-	dataLanguage?: keyof typeof EResponseDataLanguage;
+	dataLanguage?: EResponseDataLanguage;
 	/** Формат ответа */
-	dataFormat?: keyof typeof EResponseDataFormat;
+	dataFormat?: EResponseDataFormat;
 }
 
 export type TResponse = (url: string) => Promise<TAxiosResponse>;
