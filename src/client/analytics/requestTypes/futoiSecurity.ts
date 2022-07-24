@@ -1,5 +1,7 @@
 import { TAxiosResponse } from "src/api/interfaces";
 
+import { IFutoiResponse } from "../responseTypes";
+
 export interface IGetFutoiSecurityArgs {
 	/**
 	 * Дата в формате YYYY-MM-DD начиная с которой отдаются данные.
@@ -19,4 +21,4 @@ export interface IGetFutoiSecurityArgs {
 export type TGetFutoiSecurity = (
 	security: string,
 	args?: IGetFutoiSecurityArgs,
-) => Promise<TAxiosResponse<any>>;
+) => Promise<TAxiosResponse<IFutoiResponse>>;

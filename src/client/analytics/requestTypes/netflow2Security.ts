@@ -1,5 +1,7 @@
 import { TAxiosResponse } from "src/api/interfaces";
 
+import { INetflow2Response } from "../responseTypes";
+
 export interface IGetNetflow2SecurityArgs {
 	/**
 	 * Дата в формате YYYY-MM-DD начиная с которой отдаются данные.
@@ -17,4 +19,4 @@ export interface IGetNetflow2SecurityArgs {
 export type IGetNetflow2Security = (
 	security: string,
 	args?: IGetNetflow2SecurityArgs,
-) => Promise<TAxiosResponse<any>>;
+) => Promise<TAxiosResponse<INetflow2Response>>;
