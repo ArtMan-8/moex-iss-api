@@ -1,5 +1,6 @@
 import {
 	TGetSecurities,
+	TGetSecurityAggregateTradingResult,
 	TGetSecurityGroupCollection,
 	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
@@ -33,5 +34,5 @@ export interface ISecurityApi {
 	getSecurityIndexes: TGetSecurityIndexes;
 
 	/** Получить агрегированные итоги торгов бумаги за дату по рынкам */
-	// getSecurityAggregateTradingResult: any;
+	getSecurityAggregateTradingResult: TGetSecurityAggregateTradingResult;
 }
