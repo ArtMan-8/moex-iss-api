@@ -3,7 +3,7 @@ import { TAxiosResponse } from "src/api/interfaces";
 import { IEventsDetailResponse } from "../responseTypes";
 
 export interface IGetEventsDetailArgs {
-	/** Номер события */
+	/** Номер мероприятия */
 	eventId: number;
 }
 

@@ -10,10 +10,10 @@ import {
 } from "./requestTypes";
 
 export interface ISecurityApi {
-	/** Получить список типов (тип) ценных бумаг*/
+	/** Получить список типов (тип) ценных бумаг */
 	getSecurityTypes: TGetSecurityTypes;
 
-	/** Получить список групп (группу) ценных бумаг*/
+	/** Получить список групп (группу) ценных бумаг */
 	getSecurityGroups: TGetSecurityGroups;
 
 	/** Получить коллекции ценных бумаг входящие в группу */

@@ -101,7 +101,7 @@ export enum ESecurityTypes {
 
 export interface IGetSecurityTypesArgs {
 	/** Группа ценных бумаг */
-	securitytype?: ESecurityTypes;
+	securitytype: ESecurityTypes;
 }
 
 export type TGetSecurityTypes = (
