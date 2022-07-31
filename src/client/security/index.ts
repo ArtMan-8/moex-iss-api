@@ -6,6 +6,7 @@ import {
 	TGetSecurityGroupCollection,
 	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
+	TGetSecurityIndexes,
 	TGetSecuritySpecification,
 	TGetSecurityTypes,
 } from "./requestTypes";
@@ -68,6 +69,15 @@ export default class SecurityApi implements ISecurityApi {
 		params,
 	}) => {
 		return await this.api.get(`/securities/${security}`, {
+			params,
+		});
+	};
+
+	public getSecurityIndexes: TGetSecurityIndexes = async ({
+		security,
+		params,
+	}) => {
+		return this.api.get(`/securities/${security}/indices`, {
 			params,
 		});
 	};

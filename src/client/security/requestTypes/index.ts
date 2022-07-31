@@ -4,3 +4,4 @@ export * from "./securityGroupCollection";
 export * from "./securityGroupCollectionInfo";
 export * from "./securities";
 export * from "./securitySpecification";
+export * from "./securityIndexes";
