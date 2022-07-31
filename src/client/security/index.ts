@@ -3,6 +3,7 @@ import { AxiosInstance } from "axios";
 import { ISecurityApi } from "./interfaces";
 import {
 	TGetSecurities,
+	TGetSecurityAggregateTradingResult,
 	TGetSecurityGroupCollection,
 	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
@@ -81,4 +82,11 @@ export default class SecurityApi implements ISecurityApi {
 			params,
 		});
 	};
+
+	public getSecurityAggregateTradingResult: TGetSecurityAggregateTradingResult =
+		async ({ security, params }) => {
+			return this.api.get(`/securities/${security}/aggregates`, {
+				params,
+			});
+		};
 }

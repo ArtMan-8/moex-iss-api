@@ -9,8 +9,7 @@ export interface IGetTurnoversParams {
 	 * */
 	is_tonight_session?: 0 | 1;
 	/**
-	 * Обороты за конкретную дату,
-	 * в формате YYYY-MM-DD, или "today"
+	 * Обороты за конкретную дату, в формате YYYY-MM-DD, или "today"
 	 * По умолчанию - today
 	 * */
 	date?: "today" | string;
