@@ -2,9 +2,10 @@ import { AxiosInstance } from "axios";
 
 import { ISecurityApi } from "./interfaces";
 import {
-	IGetSecuritiesInfoParams,
-	TGetSecuritiesInfo,
+	IGetSecurityGroupCollectionInfoParams,
+	TGetSecurities,
 	TGetSecurityGroupCollection,
+	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
 	TGetSecurityTypes,
 } from "./requestTypes";
@@ -15,6 +16,14 @@ export default class SecurityApi implements ISecurityApi {
 	constructor(api: AxiosInstance) {
 		this.api = api;
 	}
+
+	public getSecurityTypes: TGetSecurityTypes = async (securitytype) => {
+		const path = securitytype
+			? `/securitytypes/${securitytype}`
+			: "/securitytypes";
+
+		return await this.api.get(path);
+	};
 
 	public getSecurityGroups: TGetSecurityGroups = async (options = {}) => {
 		const { securitygroup, args } = options;
@@ -44,29 +53,26 @@ export default class SecurityApi implements ISecurityApi {
 		return await this.api.get(path);
 	};
 
-	public getSecurityTypes: TGetSecurityTypes = async (securitytype) => {
-		const path = securitytype
-			? `/securitytypes/${securitytype}`
-			: "/securitytypes";
+	public getSecurityGroupCollectionInfo: TGetSecurityGroupCollectionInfo =
+		async ({ securitygroup, collection, args }) => {
+			const path = `/securitygroups/${securitygroup}/collections/${collection}/securities`;
 
-		return await this.api.get(path);
-	};
+			const params: IGetSecurityGroupCollectionInfoParams = {
+				sort_order: args?.sort_order || "secid",
+				sort_order_desc: args?.sort_order_desc || "asc",
+				start: args?.start || 0,
+			};
 
-	public getSecuritiesInfo: TGetSecuritiesInfo = async ({
-		securitygroup,
-		collection,
-		args,
-	}) => {
-		const path = `/securitygroups/${securitygroup}/collections/${collection}/securities`;
-
-		const params: IGetSecuritiesInfoParams = {
-			sort_order: args?.sort_order || "secid",
-			sort_order_desc: args?.sort_order_desc || "asc",
-			start: args?.start || 0,
+			return await this.api.get(path, {
+				params,
+			});
 		};
 
-		return await this.api.get(path, {
-			params,
+	/*----------------------------------------*/
+
+	public getSecurities: TGetSecurities = async (args) => {
+		return await this.api.get("/securities", {
+			params: args,
 		});
 	};
 }
