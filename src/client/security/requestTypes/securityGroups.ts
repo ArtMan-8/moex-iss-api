@@ -54,7 +54,7 @@ export interface IGetSecurityGroupsParams {
 
 export interface IGetSecurityGroupsArgs {
 	/** Группа ценных бумаг */
-	securitygroup?: ESecurityGroups;
+	securitygroup: ESecurityGroups;
 	/** query-params */
 	params?: IGetSecurityGroupsParams;
 }

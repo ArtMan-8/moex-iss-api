@@ -28,19 +28,10 @@ const errorMessage = response.issError;
 const data = response.data;
 ```
 
-## Реализовано
-
-Группы запросов
-
--   **analytics**, аналитические запросы: futoi, netflow2, ставки
--   **info**, информационные запросы: мероприятия, новости, справочники
--   **security**, получение информации о торгуемых инструментах
--   **request**, произволльные запросы, согласно [справочника ISS](https://iss.moex.com/iss/reference/)
-
-Типизация и текстовые подсказки есть.
+## [Подробная документация](./docs/main.md)
 
 [Планы по реализации основных запросов и то, что уже реализовано](https://github.com/ArtMan-8/moex-iss-api/issues/4)
 
-## [Подробная документация](./docs/main.md)
+<hr />
 
 #### [MIT licensed](./LICENSE)
