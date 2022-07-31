@@ -56,7 +56,7 @@ export type TCurvesSecurity =
 	| "USD_SOFR_OIS"
 	| "USD_USD";
 
-export interface IGetCurvesSecurityArgs {
+export interface IGetCurvesSecurityParams {
 	/**
 	 * Дата в формате YYYY-MM-DD начиная с которой отдаются данные.
 	 * Обратите внимание, что для данного запроса нет постраничной навигации.
@@ -71,7 +71,13 @@ export interface IGetCurvesSecurityArgs {
 	till?: string;
 }
 
+export interface IGetCurvesSecurityArgs {
+	/** secid */
+	security: TCurvesSecurity | string;
+	/** query-perams */
+	params?: IGetCurvesSecurityParams;
+}
+
 export type TGetCurvesSecurity = (
-	security: TCurvesSecurity | string,
-	args?: IGetCurvesSecurityArgs,
+	args: IGetCurvesSecurityArgs,
 ) => Promise<TAxiosResponse<ICurvesResponse>>;

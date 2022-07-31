@@ -28,7 +28,7 @@ export interface IGetSecurityGroupCollectionInfoArgs {
 	/** Коллекция ценных бумаг входящие в группу */
 	collection: string;
 	/** query-params */
-	args?: IGetSecurityGroupCollectionInfoParams;
+	params?: IGetSecurityGroupCollectionInfoParams;
 }
 
 export type TGetSecurityGroupCollectionInfo = (

@@ -22,32 +22,27 @@ export default class InfoApi implements IInfoApi {
 		return await this.api.get(`/index`);
 	};
 
-	public getEvents: TGetEvents = async (start?: number) => {
+	public getEvents: TGetEvents = async (params) => {
 		return await this.api.get("/events", {
-			params: { start: start || 0 },
+			params,
 		});
 	};
 
-	public getEventsDetail: TGetEventsDetail = async (eventId: number) => {
+	public getEventsDetail: TGetEventsDetail = async ({ eventId }) => {
 		return await this.api.get(`/events/${eventId}`);
 	};
 
-	public getNews: TGetNews = async (start?: number) => {
+	public getNews: TGetNews = async (params) => {
 		return await this.api.get("/sitenews", {
-			params: { start: start || 0 },
+			params,
 		});
 	};
 
-	public getNewsDetail: TGetNewsDetail = async (newsId: number) => {
+	public getNewsDetail: TGetNewsDetail = async ({ newsId }) => {
 		return await this.api.get(`/sitenews/${newsId}`);
 	};
 
-	public getTurnovers: TGetTurnovers = async (args) => {
-		const params = {
-			is_tonight_session: args?.is_tonight_session || 0,
-			date: args?.date || "today",
-		};
-
+	public getTurnovers: TGetTurnovers = async (params) => {
 		return await this.api.get(`/turnovers`, {
 			params,
 		});

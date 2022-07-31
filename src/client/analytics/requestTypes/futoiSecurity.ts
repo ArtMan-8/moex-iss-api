@@ -2,7 +2,7 @@ import { TAxiosResponse } from "src/api/interfaces";
 
 import { IFutoiResponse } from "../responseTypes";
 
-export interface IGetFutoiSecurityArgs {
+export interface IGetFutoiSecurityParams {
 	/**
 	 * Дата в формате YYYY-MM-DD начиная с которой отдаются данные.
 	 * Обратите внимание, что для данного запроса нет постраничной навигации.
@@ -22,7 +22,12 @@ export interface IGetFutoiSecurityArgs {
 	latest?: 0 | 1;
 }
 
+export interface IGetFutoiSecurityArgs {
+	security: string;
+	/** query-params */
+	params?: IGetFutoiSecurityParams;
+}
+
 export type TGetFutoiSecurity = (
-	security: string,
-	args?: IGetFutoiSecurityArgs,
+	args: IGetFutoiSecurityArgs,
 ) => Promise<TAxiosResponse<IFutoiResponse>>;

@@ -2,11 +2,11 @@ import { AxiosInstance } from "axios";
 
 import { ISecurityApi } from "./interfaces";
 import {
-	IGetSecurityGroupCollectionInfoParams,
 	TGetSecurities,
 	TGetSecurityGroupCollection,
 	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
+	TGetSecuritySpecification,
 	TGetSecurityTypes,
 } from "./requestTypes";
 
@@ -17,35 +17,28 @@ export default class SecurityApi implements ISecurityApi {
 		this.api = api;
 	}
 
-	public getSecurityTypes: TGetSecurityTypes = async (securitytype) => {
-		const path = securitytype
-			? `/securitytypes/${securitytype}`
+	public getSecurityTypes: TGetSecurityTypes = async (args) => {
+		const path = args?.securitytype
+			? `/securitytypes/${args.securitytype}`
 			: "/securitytypes";
 
 		return await this.api.get(path);
 	};
 
-	public getSecurityGroups: TGetSecurityGroups = async (options = {}) => {
-		const { securitygroup, args } = options;
-
-		const params = {
-			hide_inactive: args?.hide_inactive || 0,
-			trade_engine: args?.trade_engine,
-		};
-
-		const path = securitygroup
-			? `/securitygroups/${securitygroup}`
+	public getSecurityGroups: TGetSecurityGroups = async (args) => {
+		const path = args?.securitygroup
+			? `/securitygroups/${args.securitygroup}`
 			: "/securitygroups";
 
 		return await this.api.get(path, {
-			params,
+			params: args?.params,
 		});
 	};
 
-	public getSecurityGroupCollection: TGetSecurityGroupCollection = async (
+	public getSecurityGroupCollection: TGetSecurityGroupCollection = async ({
 		securitygroup,
 		collection,
-	) => {
+	}) => {
 		const path = collection
 			? `/securitygroups/${securitygroup}/collections/${collection}`
 			: `/securitygroups/${securitygroup}/collections`;
@@ -54,14 +47,8 @@ export default class SecurityApi implements ISecurityApi {
 	};
 
 	public getSecurityGroupCollectionInfo: TGetSecurityGroupCollectionInfo =
-		async ({ securitygroup, collection, args }) => {
+		async ({ securitygroup, collection, params }) => {
 			const path = `/securitygroups/${securitygroup}/collections/${collection}/securities`;
-
-			const params: IGetSecurityGroupCollectionInfoParams = {
-				sort_order: args?.sort_order || "secid",
-				sort_order_desc: args?.sort_order_desc || "asc",
-				start: args?.start || 0,
-			};
 
 			return await this.api.get(path, {
 				params,
@@ -70,9 +57,18 @@ export default class SecurityApi implements ISecurityApi {
 
 	/*----------------------------------------*/
 
-	public getSecurities: TGetSecurities = async (args) => {
+	public getSecurities: TGetSecurities = async (params) => {
 		return await this.api.get("/securities", {
-			params: args,
+			params,
+		});
+	};
+
+	public getSecuritySpecification: TGetSecuritySpecification = async ({
+		security,
+		params,
+	}) => {
+		return await this.api.get(`/securities/${security}`, {
+			params,
 		});
 	};
 }

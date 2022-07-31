@@ -2,7 +2,7 @@ import { TAxiosResponse } from "src/api/interfaces";
 
 import { IFutoiResponse } from "../responseTypes";
 
-export interface IGetFutoiArgs {
+export interface IGetFutoiArgsParams {
 	/**
 	 * Дата в формате YYYY-MM-DD, или "today"
 	 * По умолчанию - today
@@ -20,5 +20,6 @@ export interface IGetFutoiArgs {
 }
 
 export type TGetFutoi = (
-	args?: IGetFutoiArgs,
+	/** query-params */
+	params?: IGetFutoiArgsParams,
 ) => Promise<TAxiosResponse<IFutoiResponse>>;

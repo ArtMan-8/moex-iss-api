@@ -5,7 +5,7 @@ import { ISecuritiesResponse } from "../responseTypes";
 import { ESecurityGroups } from "./securityGroups";
 import { ESecurityTypes } from "./securityTypes";
 
-export type TGetSecuritiesGroupBy =
+export type TGetSecuritiesParamsGroupBy =
 	| {
 			/** Группировать выводимый результат по полю. */
 			group_by?: "type";
@@ -25,7 +25,7 @@ export type TGetSecuritiesGroupBy =
 			group_by_filter?: ESecurityGroups;
 	  };
 
-export interface IGetSecurities {
+export interface IGetSecuritiesParams {
 	/**
 	 * Поиск инструмента по части Кода, Названию, ISIN, Идентификатору Эмитента, Номеру гос.регистрации.
 	 * Слова длиной менее трёх букв игнорируются. Если параметром передано два слова через пробел. То каждое должно быть длиной не менее трёх букв.
@@ -55,5 +55,5 @@ export interface IGetSecurities {
 
 export type TGetSecurities = (
 	/** query-params */
-	args?: IGetSecurities & TGetSecuritiesGroupBy,
+	params?: IGetSecuritiesParams & TGetSecuritiesParamsGroupBy,
 ) => Promise<TAxiosResponse<ISecuritiesResponse>>;
