@@ -8,7 +8,7 @@ enum IColumnsCursor {
 
 // TODO: типизировать или нет,
 // ооочень много типов
-export interface ISecuritiesInfoResponse {
+export interface ISecurityGroupCollectionInfoResponse {
 	securities: {
 		metadata: {
 			[key: string]: IMetaDataItem;
