@@ -3,6 +3,7 @@ import {
 	TGetSecurityGroupCollection,
 	TGetSecurityGroupCollectionInfo,
 	TGetSecurityGroups,
+	TGetSecurityIndexes,
 	TGetSecuritySpecification,
 	TGetSecurityTypes,
 } from "./requestTypes";
@@ -29,7 +30,7 @@ export interface ISecurityApi {
 	getSecuritySpecification: TGetSecuritySpecification;
 
 	/** Получить список индексов, в которые входит бумага */
-	// getSecurityIndexes: any;
+	getSecurityIndexes: TGetSecurityIndexes;
 
 	/** Получить агрегированные итоги торгов бумаги за дату по рынкам */
 	// getSecurityAggregateTradingResult: any;
