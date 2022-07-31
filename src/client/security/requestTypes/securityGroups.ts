@@ -42,7 +42,7 @@ export enum ESecurityGroups {
 	StockMortgage = "stock_mortgage",
 }
 
-export interface IGetSecurityGroupsArgs {
+export interface IGetSecurityGroupsParams {
 	/**
 	 * Скрыть неактивные группы
 	 * По умолчанию - 0
@@ -52,13 +52,13 @@ export interface IGetSecurityGroupsArgs {
 	trade_engine?: EEngines;
 }
 
-export interface IGetSecurityGroupsOptions {
+export interface IGetSecurityGroupsArgs {
 	/** Группа ценных бумаг */
 	securitygroup?: ESecurityGroups;
 	/** query-params */
-	args?: IGetSecurityGroupsArgs;
+	params?: IGetSecurityGroupsParams;
 }
 
 export type TGetSecurityGroups = (
-	options?: IGetSecurityGroupsOptions,
+	args?: IGetSecurityGroupsArgs,
 ) => Promise<TAxiosResponse<ISecurityGroupsResponse>>;

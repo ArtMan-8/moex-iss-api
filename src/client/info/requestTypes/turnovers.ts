@@ -2,7 +2,7 @@ import { TAxiosResponse } from "src/api/interfaces";
 
 import { ITurnoversResponse } from "../responseTypes";
 
-export interface IGetTurnoversArgs {
+export interface IGetTurnoversParams {
 	/**
 	 * Обороты за вечернюю сессию
 	 * По умолчанию - 0
@@ -17,5 +17,6 @@ export interface IGetTurnoversArgs {
 }
 
 export type TGetTurnovers = (
-	args?: IGetTurnoversArgs,
+	/** query-params */
+	params?: IGetTurnoversParams,
 ) => Promise<TAxiosResponse<ITurnoversResponse>>;

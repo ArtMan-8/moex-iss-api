@@ -2,7 +2,12 @@ import { TAxiosResponse } from "src/api/interfaces";
 
 import { INewsDetailResponse } from "../responseTypes";
 
-export type TGetNewsDetail = (
+export interface IGetNewsDetailArgs {
 	/** номер новости */
-	newsId: number,
+	newsId: number;
+}
+
+export type TGetNewsDetail = (
+	/** query-params */
+	args: IGetNewsDetailArgs,
 ) => Promise<TAxiosResponse<INewsDetailResponse>>;

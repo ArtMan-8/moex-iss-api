@@ -99,7 +99,11 @@ export enum ESecurityTypes {
 	AgroSugar = "agro_sugar",
 }
 
-export type TGetSecurityTypes = (
+export interface IGetSecurityTypesArgs {
 	/** Группа ценных бумаг */
-	securitytype?: ESecurityTypes,
+	securitytype?: ESecurityTypes;
+}
+
+export type TGetSecurityTypes = (
+	args?: IGetSecurityTypesArgs,
 ) => Promise<TAxiosResponse<ISecurityTypesResponse>>;
