@@ -19,8 +19,18 @@ class MoexClient implements IMoexClient {
 		this.security = new SecurityApi(this.api);
 	}
 
-	public request = async (url: string) => {
-		return await this.api.get(url.replace("/iss", ""));
+	public request = async (
+		req: string | { url: string; params: URLSearchParams },
+	) => {
+		if (typeof req === "string")
+			return await this.api.get(req.replace("/iss", ""));
+
+		for (const [k, v] of this.api.defaults.params ?? {})
+			if (!req.params.has(k)) req.params.append(k, v);
+
+		return await this.api.get(req.url.replace("/iss", ""), {
+			params: req.params,
+		});
 	};
 }
 
