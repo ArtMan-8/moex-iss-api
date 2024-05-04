@@ -21,10 +21,16 @@ export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 		},
 	});
 
-	const setDataFormat = (config: AxiosRequestConfig) => ({
-		...config,
-		url: `${config.url}.${dataFormat}`,
-	});
+	const setDataFormat = (config: AxiosRequestConfig) => {
+		if (config.data.do_not_mutate_request) {
+			return config;
+		}
+
+		return {
+			...config,
+			url: `${config.url}.${dataFormat}`,
+		};
+	};
 
 	api.interceptors.request.use(setDataFormat);
 
