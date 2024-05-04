@@ -24,7 +24,8 @@ export interface IMoexConfig {
 }
 
 export type TResponse = (
-	request: string | { url: string; params: URLSearchParams },
+	url: string,
+	params?: Record<string, any>,
 ) => Promise<TAxiosResponse>;
 
 /** Базовые запросы к MOEX ISS API */

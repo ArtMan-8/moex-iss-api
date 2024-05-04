@@ -19,17 +19,19 @@ class MoexClient implements IMoexClient {
 		this.security = new SecurityApi(this.api);
 	}
 
-	public request = async (
-		req: string | { url: string; params: URLSearchParams },
-	) => {
-		if (typeof req === "string")
-			return await this.api.get(req.replace("/iss", ""));
+	public request = async (url: string, params?: Record<string, any>) => {
+		if (url.length == 0) throw new Error("url cannot be empty");
 
-		for (const [k, v] of this.api.defaults.params ?? {})
-			if (!req.params.has(k)) req.params.append(k, v);
+		if (params)
+			for (const [k, v] of this.api.defaults.params ?? {})
+				if (!params[k]) params[k] = v;
 
-		return await this.api.get(req.url.replace("/iss", ""), {
-			params: req.params,
+		return await this.api.get(url, {
+			params: params,
+			data: {
+				do_not_mutate_request:
+					url.indexOf("?") > -1 || url.indexOf(".") > -1,
+			},
 		});
 	};
 }
