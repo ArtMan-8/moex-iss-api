@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/ArtMan-8/moex-iss-api/compare/v0.4.0...v0.4.1) (2024-06-17)
+
+
+### New Features
+
+* **request:** добавил возможность передачи параметров в request ([4760014](https://github.com/ArtMan-8/moex-iss-api/commit/4760014d00a4a54da7816abc7aeff6d5f6806490)), closes [#35](https://github.com/ArtMan-8/moex-iss-api/issues/35)
+* **request:** добавить возможность указания формата запроса клиентом ([9d504f5](https://github.com/ArtMan-8/moex-iss-api/commit/9d504f561b900eeeb6647feb62778af2ea21994a))
+
 ## [0.4.0](https://github.com/ArtMan-8/moex-iss-api/compare/v0.2.1...v0.4.0) (2022-07-31)
 
 
