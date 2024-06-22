@@ -23,7 +23,7 @@ class MoexClient implements IMoexClient {
 		if (url.length == 0) throw new Error("url cannot be empty");
 
 		if (params)
-			for (const [k, v] of this.api.defaults.params ?? {})
+			for (const [k, v] of Object.entries(this.api.defaults.params ?? {}))
 				if (!params[k]) params[k] = v;
 
 		return await this.api.get(url, {
