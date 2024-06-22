@@ -22,7 +22,7 @@ export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 	});
 
 	const setDataFormat = (config: AxiosRequestConfig) => {
-		if (config.data.do_not_mutate_request) {
+		if (config.data != null && config.data.do_not_mutate_request) {
 			return config;
 		}
 
