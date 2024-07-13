@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.2](https://github.com/ArtMan-8/moex-iss-api/compare/v0.4.1...v0.4.2) (2024-07-13)
+
+
+### Bug Fixes
+
+* итерирование по объекту надо делать через Object.entries ([0305e51](https://github.com/ArtMan-8/moex-iss-api/commit/0305e515f29fec9c67f40f872d881618e26ed835))
+
 ### [0.4.1](https://github.com/ArtMan-8/moex-iss-api/compare/v0.4.0...v0.4.1) (2024-06-17)
 
 
