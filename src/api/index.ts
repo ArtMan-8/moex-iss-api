@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { AxiosInstance, InternalAxiosRequestConfig } from "axios";
 
 import {
 	EResponseDataFormat,
@@ -21,7 +21,9 @@ export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 		},
 	});
 
-	const setDataFormat = (config: AxiosRequestConfig) => {
+	const setDataFormat = (
+		config: InternalAxiosRequestConfig,
+	): InternalAxiosRequestConfig => {
 		if (config.data != null && config.data.do_not_mutate_request) {
 			return config;
 		}
@@ -40,9 +42,7 @@ export const createAxiosInstance = (config?: IMoexConfig): AxiosInstance => {
 		return response;
 	};
 
-	const onError = (err: AxiosError) => {
-		console.error(err);
-	};
+	const onError = console.error;
 
 	api.interceptors.response.use(onSuccess, onError);
 

@@ -1,4 +1,4 @@
-{
+export default [{
 	"parser": "@typescript-eslint/parser",
 	"plugins": ["@typescript-eslint", "prettier", "import"],
 	"extends": [
@@ -12,7 +12,6 @@
 	"rules": {
 		"no-console": 1,
 		"prettier/prettier": "error",
-		// "import/no-unresolved": "off",
 		"sort-imports": [
 			"error",
 			{
@@ -51,5 +50,5 @@
 				"project": "./tsconfig.json"
 			}
 		}
-	}
-}
+	},
+}]
