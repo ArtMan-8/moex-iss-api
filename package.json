@@ -4,6 +4,7 @@
 	"description": "MOEX ISS API Client for JS",
 	"author": "Vladimir Artyukhov",
 	"license": "MIT",
+	"type": "module",
 	"keywords": [
 		"moex iss",
 		"moex api",
@@ -23,12 +24,12 @@
 		"release:major": "standard-version --release-as major && npm run build",
 		"release:minor": "standard-version --release-as minor && npm run build",
 		"release:patch": "standard-version --release-as patch && npm run build",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"lint-staged": {
-		"./src/**/*.{js,jsx,ts,tsx}": [
-			"prettier --config ./.prettierrc.json --write",
-			"eslint --config ./.eslintrc.json --fix"
+		"./src/**/*.{js,ts}": [
+			"prettier --config ./prettier.config.js --write",
+			"eslint --config ./eslint.config.js --fix"
 		]
 	},
 	"config": {
@@ -37,27 +38,31 @@
 		}
 	},
 	"dependencies": {
-		"axios": "^0.28.0"
+		"axios": "^1.7.4"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^17.0.3",
-		"@commitlint/config-conventional": "^17.0.3",
-		"@typescript-eslint/eslint-plugin": "^5.30.3",
-		"@typescript-eslint/parser": "^5.30.3",
-		"commitizen": "^4.2.4",
-		"cz-conventional-changelog": "^3.0.1",
-		"eslint": "^8.18.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-import-resolver-typescript": "^2.7.1",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"husky": "^8.0.1",
-		"lint-staged": "^13.0.3",
-		"nodemon": "^2.0.18",
-		"prettier": "^2.7.1",
+		"@commitlint/cli": "^19.4.0",
+		"@commitlint/config-conventional": "^19.2.2",
+		"@typescript-eslint/eslint-plugin": "^8.1.0",
+		"@typescript-eslint/parser": "^8.1.0",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^9.9.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-prettier": "^5.2.1",
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.9",
+		"nodemon": "^3.1.4",
+		"prettier": "^3.3.3",
 		"standard-version": "^9.5.0",
-		"ts-node": "^10.8.1",
-		"typescript": "^4.7.4"
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.4"
+	},
+	"engines": {
+		"node": "20",
+		"npm": "10"
 	},
 	"repository": {
 		"type": "git",

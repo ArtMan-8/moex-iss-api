@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
-		"target": "es2016",
-		"module": "CommonJS",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
 		"strict": true,
 		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
 		"declaration": true,
 		"outDir": "dist",
 		"rootDir": "src",
-		"baseUrl": "./"
+		"baseUrl": "."
 	},
 	"include": ["src"]
 }
