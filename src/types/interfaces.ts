@@ -5,3 +5,11 @@ export interface IMetaDataItem {
 }
 
 export type TData = (string | number | null)[][];
+
+export interface IDefaultDataView<EColumn extends string> {
+	metadata: {
+		[key in EColumn]: IMetaDataItem;
+	};
+	columns: [EColumn];
+	data: TData;
+}
