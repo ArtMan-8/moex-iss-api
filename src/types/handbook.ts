@@ -15,8 +15,12 @@ export enum EEngines {
 	Offboard = "offboard",
 	/** Агро */
 	Agro = "agro",
-	/** OTC Система */
+	/** ОТС с ЦК */
 	OTC = "otc",
+	/** Квоты */
+	QUOTES = "quotes",
+	/** Денежный рынок */
+	MONEY = "money",
 }
 
 export interface IStockMarkets {
