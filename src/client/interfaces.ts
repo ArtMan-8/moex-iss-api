@@ -1,6 +1,7 @@
 import { TAxiosResponse } from "src/api/interfaces";
 
 import AnalyticsApi from "./analytics";
+import EngineApi from "./engine";
 import InfoApi from "./info";
 import SecurityApi from "./security";
 
@@ -36,6 +37,8 @@ export interface IMoexClient {
 	analytics: AnalyticsApi;
 	/** Получить информацию по торгуемым инструментам */
 	security: SecurityApi;
+	/** Получить информацию по торговой системе */
+	engine: EngineApi;
 	/** Произвольный запрос, согласно справочника
 	 * {@link http://iss.moex.com/iss/reference/ MOEX ISS}
 	 */
